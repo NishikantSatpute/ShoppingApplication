@@ -13,7 +13,7 @@ const Register = () => {
   return (
     <View style={{ marginTop: 60, backgroundColor: "#e4f2ea", height: "100%",margin:10 }}>
       <View style={styles.circle}>
-        <View style={{ flex: 1, flexDirection: "row", justifyContent: 'center' }}><Text style={{ margin: 5,fontSize: 30, color: "white" }}>New Account</Text></View>
+        <View style={{ flex: 1, flexDirection: "row", justifyContent: 'center',marginTop:10 }}><Text style={{ margin: 5,fontSize: 30, color: "white" }}>New Account</Text></View>
         <View style={{ flex: 1, flexDirection: "row", justifyContent: 'center' }}><Text style={{ margin: 5, fontSize: 20, color: "white" }} >Sign up and get started</Text></View>
       </View>
       <View style={styles.main}>

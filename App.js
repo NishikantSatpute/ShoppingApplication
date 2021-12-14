@@ -10,8 +10,8 @@ import Register from "./screens/Register";
 function App() {
   return (
     <View style={styles.container}>
-      <Register/>
-      {/* <Welcome /> */}
+      {/* <Register/> */}
+      <Welcome />
       {/* <EmailRegistered /> */}
       {/* <Otp /> */}
       {/* <PasswordVerify /> */}
