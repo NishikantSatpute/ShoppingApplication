@@ -1,7 +1,7 @@
 import * as React from "react";
-import { Text, View, StyleSheet, Image } from "react-native";
+import { Text,Button, View, StyleSheet, Image, TouchableOpacity } from "react-native";
 import Constants from "expo-constants";
-import { Button, TextInput, Avatar } from "react-native-paper";
+import { TextInput, Avatar } from "react-native-paper";
 // import { Icon } from 'react-native-elements';
 // import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 // import { faFacebook } from "@fortawesome/free-solid-svg-icons";
@@ -45,12 +45,13 @@ const Register = () => {
           value={text}
           onChangeText={(text) => setText(text)}
         />
-        <Button style={styles.btn}>
-          <Text styles={{ color: "#fff",}}>Sign In</Text>
-        </Button>
-        <Button style={{ marginTop: 10 }}>
-          <Text>Forgot Password</Text>
-        </Button>
+        <TouchableOpacity>
+        <Text style={styles.btn}>Sign In</Text>
+        </TouchableOpacity>
+        
+        <TouchableOpacity>
+        <Text style={{textAlign: "center", margin:15, fontSize:15, color:"#6164e9"}}>Forgot Password</Text>
+        </TouchableOpacity>
         <View style={{ flexDirection: "row" }}>
           <View style={{ margin: 5, height: 20, width: "33%" }}>
             <Text>Facebook</Text>
@@ -68,9 +69,9 @@ const Register = () => {
             <Text>Twitter</Text>
           </View>
         </View>
-        <Button style={styles.btn}>
-          Sign Up
-        </Button>
+        <TouchableOpacity >
+        <Text style={styles.btn}>Sign Up</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
