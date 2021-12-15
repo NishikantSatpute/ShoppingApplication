@@ -13,12 +13,12 @@ function App() {
   return (
     <View style={styles.container}>
        {/* <Login /> */}
-      <Register/>
+      {/* <Register/> */}
       {/* <Welcome /> */}
       {/* <EmailRegistered /> */}
       {/* <Otp /> */}
       {/* <PasswordVerify /> */}
-      {/* <ProductList/> */}
+      <ProductList/>
       <StatusBar style="auto" />
     </View>
   );
