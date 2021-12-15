@@ -1,6 +1,8 @@
 import * as React from "react";
 import { Text, View, StyleSheet, Image } from "react-native";
 import Constants from "expo-constants";
+import { Entypo, AntDesign, FontAwesome } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 import { Button, TextInput, Avatar } from "react-native-paper";
 // import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 // import { faFacebook } from "@fortawesome/free-solid-svg-icons";
@@ -44,10 +46,12 @@ const Register = () => {
         />
         <Button style={{ borderRadius: 18, marginTop: 10, backgroundColor: "orange", color: "white" }}><Text>Sign Up</Text></Button>
         <Button style={{ marginTop: 10 }}><Text>Forgot Password</Text></Button>
-        <View style={{ flexDirection: "row" }}>
-          <View style={{ margin: 5, height: 20, width: "33%" }}><Text>Facebook</Text></View>
-          <View style={{ margin: 5, width: "33%" }}><Text>Instagram</Text></View>
-          <View style={{ margin: 5, width: "33%" }}><Text>Twitter</Text></View>
+        <View style={{ flexDirection: "row", justifyContent:"space-around" }}>
+          <Entypo name="facebook" size={60} color="blue" />
+          <LinearGradient colors={['#bc1888', '#dc2743', '#f09433']} style={{ borderRadius:10,padding:1 }}>
+          <AntDesign name="instagram" size={60} color="white" />
+          </LinearGradient>
+          <FontAwesome name="twitter-square" size={65} color="aqua" />
         </View>
         <Button style={{ borderRadius: 18, marginTop: 10, borderColor: "orange", borderWidth: 2 }}>Sign In</Button>
       </View>
@@ -65,7 +69,6 @@ const styles = StyleSheet.create({
   },
   main: {
     margin: 10,
-    marginTop: 20,
   },
   textg: {
     margin: 5,
@@ -86,7 +89,6 @@ const styles = StyleSheet.create({
     borderBottomWidth: 10,
     borderLeftWidth: 10,
     borderRightWidth: 10,
-    marginBottom: 30,
   },
 });
 
