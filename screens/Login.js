@@ -1,8 +1,9 @@
 import * as React from "react";
 import { Text,Button, View, StyleSheet, Image, TouchableOpacity } from "react-native";
 import Constants from "expo-constants";
+import { Entypo, AntDesign, FontAwesome } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 import { TextInput, Avatar } from "react-native-paper";
-// import { Icon } from 'react-native-elements';
 // import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 // import { faFacebook } from "@fortawesome/free-solid-svg-icons";
 // or any pure javascript modules available in npm
@@ -50,24 +51,14 @@ const Register = () => {
         </TouchableOpacity>
         
         <TouchableOpacity>
-        <Text style={{textAlign: "center", margin:15, fontSize:15, color:"#6164e9"}}>Forgot Password</Text>
+        <Text style={{textAlign: "center", margin:15, fontSize:18, color:"#6164e9"}}>Forgot Password</Text>
         </TouchableOpacity>
-        <View style={{ flexDirection: "row" }}>
-          <View style={{ margin: 5, height: 20, width: "33%" }}>
-            <Text>Facebook</Text>
-            {/* <Icon
-            reverse
-            name='ios-american-football'
-            type='ionicon'
-            color='#517fa4'
-            /> */}
-          </View>
-          <View style={{ margin: 5, width: "33%" }}>
-            <Text>Instagram</Text>
-          </View>
-          <View style={{ margin: 5, width: "33%" }}>
-            <Text>Twitter</Text>
-          </View>
+        <View style={{ flexDirection: "row", justifyContent:"space-around" }}>
+          <Entypo name="facebook" size={50} color="blue" />
+          <LinearGradient colors={['#bc1888', '#dc2743', '#f09433']} style={{ borderRadius:10,padding:1 }}>
+          <AntDesign name="instagram" size={48} color="white" />
+          </LinearGradient>
+          <FontAwesome name="twitter-square" size={55} color="aqua" />
         </View>
         <TouchableOpacity >
         <Text style={styles.btn}>Sign Up</Text>
