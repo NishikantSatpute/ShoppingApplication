@@ -11,9 +11,9 @@ import Register from "./screens/Register";
 function App() {
   return (
     <View style={styles.container}>
-       {/* <Login /> */}
+       <Login />
       {/* <Register/> */}
-      <Welcome />
+      {/* <Welcome /> */}
       {/* <EmailRegistered /> */}
       {/* <Otp /> */}
       {/* <PasswordVerify /> */}
