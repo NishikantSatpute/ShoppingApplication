@@ -1,6 +1,8 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import Navbar from "./screens/Navbar";
+import Product from "./screens/Product";
 import Welcome from "./screens/Welcome";
 import Login from "./screens/Login";
 import EmailRegistered from "./screens/EmailRegistered";
@@ -14,6 +16,8 @@ function App() {
     <View style={styles.container}>
        {/* <Login /> */}
       {/* <Register/> */}
+      {/* <Navbar /> */}
+      {/* <Product /> */}
       {/* <Welcome /> */}
       {/* <EmailRegistered /> */}
       {/* <Otp /> */}
