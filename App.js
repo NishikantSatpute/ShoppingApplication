@@ -1,35 +1,60 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Button } from "react-native";
 import Welcome from "./screens/Welcome";
 import Login from "./screens/Login";
-import EmailRegistered from "./screens/EmailRegistered";
 import ProductList from "./screens/ProductList";
 import Otp from "./screens/Otp";
 import PasswordVerify from "./screens/PasswordVerify";
 import Register from "./screens/Register";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { AntDesign } from "@expo/vector-icons";
+import ViewCart from "./screens/ViewCart";
+import { HomeScreen } from "./screens/ViewCart";
+import { ViewCartHeader } from "./screens/ViewCart";
+import { EmailRegistered } from "./screens/EmailRegistered";
+
+const Stack = createNativeStackNavigator();
+
+const ViewStack = () => {
+  return (
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="View Cart" component={ViewCartHeader} />
+    </Stack.Navigator>
+  );
+};
+
+const EmailStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Email Registered" component={EmailRegistered} />
+    </Stack.Navigator>
+  );
+};
 
 function App() {
   return (
-    <View style={styles.container}>
-       {/* <Login /> */}
-      {/* <Register/> */}
-      {/* <Welcome /> */}
-      {/* <EmailRegistered /> */}
-      {/* <Otp /> */}
-      {/* <PasswordVerify /> */}
-      <ProductList/>
+    <NavigationContainer style={styles.container}>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        {/* <Stack.Screen name="EmailRegistered" component={EmailStack} /> */}
+        <Stack.Screen name="ViewCart" component={ViewStack} />
+      </Stack.Navigator>
       <StatusBar style="auto" />
-    </View>
+    </NavigationContainer>
   );
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
 
 export default App;
+
+const styles = StyleSheet.create({
+  // container: {
+  //   flex: 1,
+  //   backgroundColor: "#fff",
+  //   alignItems: "center",
+  //   justifyContent: "center",
+  // },
+});
+
+// export default App;
