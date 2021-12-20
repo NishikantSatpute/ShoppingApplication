@@ -45,8 +45,7 @@ const styles = StyleSheet.create({
       elevation: 15,
   },
   right_side:{
-    flexDirection: "row",
-    
+    flexDirection: "row", 
   }
 });
 
