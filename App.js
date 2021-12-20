@@ -17,12 +17,12 @@ function App() {
        {/* <Login /> */}
       {/* <Register/> */}
       {/* <Navbar /> */}
-      {/* <Product /> */}
+      <Product />
       {/* <Welcome /> */}
       {/* <EmailRegistered /> */}
       {/* <Otp /> */}
       {/* <PasswordVerify /> */}
-      <ProductList/>
+      {/* <ProductList/> */}
       <StatusBar style="auto" />
     </View>
   );

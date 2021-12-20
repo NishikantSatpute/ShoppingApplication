@@ -14,7 +14,7 @@ import { TextInput, Avatar } from "react-native-paper";
 const Product = () => {
   const [text, setText] = React.useState("");
   return (
-    <View style={{ margin: 0, backgroundColor: "#6164e9", height: "100%", width: "100%" }}>
+    <View style={{ marginTop: 0, backgroundColor: "#6164e9", height: "10%", width: "100%" }}>
       < Navbar/>
       <View style={styles.product_style}>
         <Text style={{color: "black", borderWidth:2,borderColor:"red"}}> Chana Dal: 1kg</Text>
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     paddingTop: Constants.statusBarHeight,
     backgroundColor: "#ecf0f1",
-    padding: 8,
+    // padding: 8,
   },
   product_style: {
     marginTop: 50,
