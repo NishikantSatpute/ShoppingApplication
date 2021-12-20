@@ -1,10 +1,12 @@
 import React from "react"; 
 import { View, StyleSheet,ScrollView, Text, Image,TouchableOpacity } from "react-native";
+import Navbar from "./Navbar";
 import { borderColor } from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
 
 const ProductList = () => {
   return (
     <View style={styles.container}>
+        <Navbar />
         <ScrollView horizontal={true} style={{ borderStyle: "solid", borderWidth: 1,borderColor:"black"}}>
         <TouchableOpacity style={styles.productmenu}>
           <Text style={styles.menuproduct, { backgroundColor: "green", color: "white", textAlign: "center",padding:5,borderRadius:15}}>Sign Up</Text>
