@@ -1,17 +1,27 @@
 import React from "react";
-import { View, StyleSheet, Text, TextInput,TouchableOpacity } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 
-const EmailRegistered = () => {
+
+export const EmailRegistered =({ navigation })=> {
   return (
     <View style={styles.container}>
       <Text style={{ fontWeight: "bold", marginTop: 20 }}>
         Enter Your Registered Email Address
       </Text>
       <TextInput style={styles.input} />
-      <TouchableOpacity><Text style={styles.btn1}>Send</Text></TouchableOpacity>
+      <TouchableOpacity>
+        <Text style={styles.btn1} onPress={() => navigation.navigate("ViewCart")}>Send</Text>
+      </TouchableOpacity>
     </View>
   );
-};
+}
+
 
 const styles = StyleSheet.create({
   container: {
