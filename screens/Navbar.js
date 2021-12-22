@@ -11,10 +11,8 @@ import { TextInput, Avatar } from "react-native-paper";
 // import {Navigation} from 'react-navigation';
 
 const Navbar = () => {
-  const [text, setText] = React.useState("");
   return (
-    <View style={{ margin: 0, backgroundColor: "#fff", height: "100%", width: "100%" }}>
-      {/* Navbar */}
+    <View style={{ margin: 0, backgroundColor: "#fff", width: "100%" }}>
       <View style={styles.navbar}>
         <AntDesign name="arrowleft" size={24} color="black" style={{padding: 10,}} />
         <View style={styles.right_side}>
@@ -22,20 +20,12 @@ const Navbar = () => {
             <Feather name="shopping-cart" size={24} color="black" style={{padding: 10, fontSize: 20, color:"#6164e9"}}/>  
             <FontAwesome name="user-circle-o" size={24} color="black" style={{padding: 10, fontSize: 20, color:"#6164e9"}} />
         </View>
-      </View>
-      
+      </View>      
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    paddingTop: Constants.statusBarHeight,
-    backgroundColor: "#ecf0f1",
-    padding: 8,
-  },
   navbar: {
       backgroundColor: "#fff",
       marginTop: 30,

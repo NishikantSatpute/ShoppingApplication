@@ -16,6 +16,8 @@ import ViewCart from "./screens/ViewCart";
 import { HomeScreen } from "./screens/ViewCart";
 import { ViewCartHeader } from "./screens/ViewCart";
 import { EmailRegistered } from "./screens/EmailRegistered";
+import  Grocery  from "./screens/Grocery";
+import  Category  from "./screens/Category";
 
 const Stack = createNativeStackNavigator();
 
@@ -49,7 +51,8 @@ function App() {
        {/* <Login /> */}
       {/* <Register/> */}
       {/* <Navbar /> */}
-      <Product />
+      {/* <Category/> */}
+      <Grocery/>      
       {/* <Welcome /> */}
       {/* <EmailRegistered /> */}
       {/* <Otp /> */}
