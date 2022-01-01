@@ -12,15 +12,7 @@ const ProductList = () => {
   const countries = ["2 kg", "3 kg", "4 kg", "5 kg"];
   return (
     <View style={styles.container}>
-        {/* <Navbar/> */}
-      <View style={styles.navbar}>
-        <AntDesign name="arrowleft" size={24} color="black" style={{ padding: 10, }} />
-        <View style={styles.right_side}>
-          <FontAwesome name="search" size={24} color="black" style={{ padding: 10, fontSize: 20, color: "#6164e9" }} />
-          <Feather name="shopping-cart" size={24} color="black" style={{ padding: 10, fontSize: 20, color: "#6164e9" }} />
-          <FontAwesome name="user-circle-o" size={24} color="black" style={{ padding: 10, fontSize: 20, color: "#6164e9" }} />
-        </View>
-      </View>
+      <Navbar/>
       <ScrollView horizontal={true} style={{
         borderStyle: "solid", borderWidth: 1, borderColor: "black", backgroundColor: '#fff', shadowColor: '#000',
         shadowOffset: { width: 1, height: 1 },
@@ -51,7 +43,7 @@ const ProductList = () => {
           <View style={{ height: "100%", width: "100%",marginLeft:10,flexDirection:"row" }}>
             <View style={{ height: "100%", width: "20%" }}>
             <Image style={{ height: "80%", width: "100%" }} source={require("../images/Welcome.png")} />
-            <Text>$14 OFF</Text>
+            <Text style={{color:"orange"}}>$14 OFF</Text>
             </View>
             <View style={{ width: "80%",flexDirection:"column"}}>
             <Text style={{ marginLeft:30,width:"100%",fontSize:20,marginTop:20 }}>Chana Dal: 1 Kg</Text>
@@ -341,7 +333,7 @@ const styles = StyleSheet.create({
   },
   productitems:{
     width:"100%",
-    height:200,
+    height:220,
     borderBottomColor:"black",
     borderBottomWidth:1,
   },

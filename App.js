@@ -9,11 +9,13 @@ import ProductList from "./screens/ProductList";
 import Otp from "./screens/Otp";
 import PasswordVerify from "./screens/PasswordVerify";
 import Register from "./screens/Register";
+import Banner from "./screens/Banner";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { AntDesign } from "@expo/vector-icons";
 import ViewCart from "./screens/ViewCart";
 import { HomeScreen } from "./screens/ViewCart";
+import { Category } from "./screens/Category";
 import { ViewCartHeader } from "./screens/ViewCart";
 import { EmailRegistered } from "./screens/EmailRegistered";
 
@@ -46,6 +48,8 @@ function App() {
     //   <StatusBar style="auto" />
     // </NavigationContainer>
     <View style={styles.container}>
+      {/* <Category/> */}
+      {/* <Product/> */}
       <ProductList/>
     </View>
   );

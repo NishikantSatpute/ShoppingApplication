@@ -13,7 +13,7 @@ import { TextInput, Avatar } from "react-native-paper";
 const Navbar = () => {
   const [text, setText] = React.useState("");
   return (
-    <View style={{ margin: 0, backgroundColor: "#fff", height: "100%", width: "100%" }}>
+    <View style={{ margin: 0, backgroundColor: "#fff", width: "100%" }}>
       {/* Navbar */}
       <View style={styles.navbar}>
         <AntDesign name="arrowleft" size={24} color="black" style={{padding: 10,}} />
