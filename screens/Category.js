@@ -1,32 +1,89 @@
 import * as React from "react";
-import { Text, Button, View, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { Text,Button, View, StyleSheet, Image,ScrollView, TouchableOpacity } from "react-native";
 import Constants from "expo-constants";
-import { Entypo, AntDesign, FontAwesome } from '@expo/vector-icons';
-import { LinearGradient } from 'expo-linear-gradient';
-import { TextInput, Avatar } from "react-native-paper";
-// import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-// import { faFacebook } from "@fortawesome/free-solid-svg-icons";
-// or any pure javascript modules available in npm
-// import { Card } from 'react-native-paper';
-// import {Navigation} from 'react-navigation';
+import { Entypo, AntDesign, FontAwesome, Feather, Ionicons} from '@expo/vector-icons';
+import Navbar from "./Navbar";
+
 
 const Category = () => {
-    const [text, setText] = React.useState("");
-    return (
-        <View style={{ margin: 0, height: "100%", width: "100%" }}>
-           <Text>Hello World!</Text> 
-        </View>
-    );
+  return (
+    <View style={styles.container}>
+      <Navbar/>
+      <ScrollView style={{height:"100%"}}>
+      <View style={{flexDirection:"row",height:180}}>
+      <TouchableOpacity style={{ justifyContent:"space-between",padding:20,borderBottomWidth:0.5,borderBottomStyle:"solid",height:"100%",width:"33%",borderRightWidth:0.5,borderRightStyle:"solid", }}>
+          <Image style={{ height:100, width: "100%"}} source={require("../images/Welcome.png")} />
+          <Text style={{textAlign:"center"}}>Dals</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={{ justifyContent:"space-between",padding:20,borderBottomWidth:0.5,borderBottomStyle:"solid",height:"100%",width:"33%",borderRightWidth:0.5,borderRightStyle:"solid", }}>
+          <Image style={{ height: 100, width: "100%"}} source={require("../images/Welcome.png")} />
+          <Text style={{textAlign:"center"}}>Dals</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={{ justifyContent:"space-between",padding:20,borderBottomWidth:0.5,borderBottomStyle:"solid",height:"100%",width:"33%",borderRightWidth:0.5,borderRightStyle:"solid", }}>
+          <Image style={{ height: 100, width: "100%"}} source={require("../images/Welcome.png")} />
+          <Text style={{textAlign:"center"}}>Dals</Text>
+      </TouchableOpacity>
+      </View>
+      <View style={{flexDirection:"row",height:180}}>
+      <TouchableOpacity style={{ justifyContent:"space-between",padding:20,borderBottomWidth:0.5,borderBottomStyle:"solid",height:"100%",width:"33%",borderRightWidth:0.5,borderRightStyle:"solid", }}>
+          <Image style={{ height:100, width: "100%"}} source={require("../images/Welcome.png")} />
+          <Text style={{textAlign:"center"}}>Dals</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={{ justifyContent:"space-between",padding:20,borderBottomWidth:0.5,borderBottomStyle:"solid",height:"100%",width:"33%",borderRightWidth:0.5,borderRightStyle:"solid", }}>
+          <Image style={{ height: 100, width: "100%"}} source={require("../images/Welcome.png")} />
+          <Text style={{textAlign:"center"}}>Dals</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={{ justifyContent:"space-between",padding:20,borderBottomWidth:0.5,borderBottomStyle:"solid",height:"100%",width:"33%",borderRightWidth:0.5,borderRightStyle:"solid", }}>
+          <Image style={{ height: 100, width: "100%"}} source={require("../images/Welcome.png")} />
+          <Text style={{textAlign:"center"}}>Dals</Text>
+      </TouchableOpacity>
+      </View>
+      <View style={{flexDirection:"row",height:180}}>
+      <TouchableOpacity style={{ justifyContent:"space-between",padding:20,borderBottomWidth:0.5,borderBottomStyle:"solid",height:"100%",width:"33%",borderRightWidth:0.5,borderRightStyle:"solid", }}>
+          <Image style={{ height:100, width: "100%"}} source={require("../images/Welcome.png")} />
+          <Text style={{textAlign:"center"}}>Dals</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={{ justifyContent:"space-between",padding:20,borderBottomWidth:0.5,borderBottomStyle:"solid",height:"100%",width:"33%",borderRightWidth:0.5,borderRightStyle:"solid", }}>
+          <Image style={{ height: 100, width: "100%"}} source={require("../images/Welcome.png")} />
+          <Text style={{textAlign:"center"}}>Dals</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={{ justifyContent:"space-between",padding:20,borderBottomWidth:0.5,borderBottomStyle:"solid",height:"100%",width:"33%",borderRightWidth:0.5,borderRightStyle:"solid", }}>
+          <Image style={{ height: 100, width: "100%"}} source={require("../images/Welcome.png")} />
+          <Text style={{textAlign:"center"}}>Dals</Text>
+      </TouchableOpacity>
+      </View>
+      <View style={{flexDirection:"row",height:180}}>
+      <TouchableOpacity style={{ justifyContent:"space-between",padding:20,borderBottomWidth:0.5,borderBottomStyle:"solid",height:"100%",width:"33%",borderRightWidth:0.5,borderRightStyle:"solid", }}>
+          <Image style={{ height:100, width: "100%"}} source={require("../images/Welcome.png")} />
+          <Text style={{textAlign:"center"}}>Dals</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={{ justifyContent:"space-between",padding:20,borderBottomWidth:0.5,borderBottomStyle:"solid",height:"100%",width:"33%",borderRightWidth:0.5,borderRightStyle:"solid", }}>
+          <Image style={{ height: 100, width: "100%"}} source={require("../images/Welcome.png")} />
+          <Text style={{textAlign:"center"}}>Dals</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={{ justifyContent:"space-between",padding:20,borderBottomWidth:0.5,borderBottomStyle:"solid",height:"100%",width:"33%",borderRightWidth:0.5,borderRightStyle:"solid", }}>
+          <Image style={{ height: 100, width: "100%"}} source={require("../images/Welcome.png")} />
+          <Text style={{textAlign:"center"}}>Dals</Text>
+      </TouchableOpacity>
+      </View>
+      <TouchableOpacity style={{flexDirection:"row",height:40,marginBottom:20,justifyContent:"center",borderBottomWidth:1,borderBottomStyle:"solid",borderBottomColor:"black",padding:5}}>
+        <Text style={{color:"#6164e9"}}>View More </Text>
+        <AntDesign name="caretright" size={24} color="#6164e9" />
+      </TouchableOpacity>
+      
+      </ScrollView>
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: "center",
-        paddingTop: Constants.statusBarHeight,
-        backgroundColor: "#ecf0f1",
-        padding: 8,
-    }
+        justifyContent: "flex-start",
+        width:"100%",
+        height:"100%",
+        flexDirection:"column"
+      },
 });
 
 export default Category;

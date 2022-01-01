@@ -10,7 +10,7 @@ import { TextInput, Avatar } from "react-native-paper";
 // import { Card } from 'react-native-paper';
 // import {Navigation} from 'react-navigation';
 
-const Register = () => {
+const Login = () => {
   const [text, setText] = React.useState("");
   return (
     <View style={{ margin: 0, backgroundColor: "#e4f2ea", height: "100%", width: "100%" }}>
@@ -29,4 +29,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Register;
+export default Login;

@@ -1,12 +1,12 @@
 import * as React from "react";
 import { Text, Button, View, StyleSheet, Image, TouchableOpacity, ScrollView} from "react-native";
 import Constants from "expo-constants";
-import { Entypo, AntDesign, FontAwesome, Feather, Ionicons } from '@expo/vector-icons';
+import { Entypo, AntDesign, FontAwesome, Feather, Ionicons} from '@expo/vector-icons';
 import Navbar from "./Navbar";
 import Banner from "./Banner";
 import { LinearGradient } from 'expo-linear-gradient';
 import { TextInput, Avatar } from "react-native-paper";
-// import { ScrollView } from "react-native-web";
+import { ScrollView } from "react-native-web";
 
 // import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 // import { faFacebook } from "@fortawesome/free-solid-svg-icons";
