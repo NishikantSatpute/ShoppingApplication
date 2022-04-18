@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 
-const Welcome = () => {
+const Welcome = (props) => {
   return (
     <View>
       <Image
@@ -16,10 +16,10 @@ const Welcome = () => {
       <Text style={styles.logintext}>
         Log In with your Data that you entered during your Registration.
       </Text>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => props.navigation.navigate("signup")}>
         <Text style={styles.btn1}>Sign Up</Text>
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => props.navigation.navigate("signin")}>
         <Text style={styles.btn2}>Sign In</Text>
       </TouchableOpacity>
     </View>

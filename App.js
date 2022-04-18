@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React,{useEffect,useState} from "react";
 import Navbar from "./screens/Navbar";
+import Navbar2 from "./screens/Navbar2";
 import Product from "./screens/Product";
 import { StyleSheet, Text, View, Button } from "react-native";
 import Welcome from "./screens/Welcome";
@@ -13,15 +14,28 @@ import Banner from "./screens/Banner";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { AntDesign } from "@expo/vector-icons";
-import ViewCart from "./screens/ViewCart";
+import {ViewCartHeader} from "./screens/ViewCart";
 import { HomeScreen } from "./screens/ViewCart";
-import { Category } from "./screens/Category";
-import { ViewCartHeader } from "./screens/ViewCart";
+import  Category  from "./screens/Category";
 import { EmailRegistered } from "./screens/EmailRegistered";
 import  Grocery  from "./screens/Grocery";
-import  Category  from "./screens/Category";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Stack = createNativeStackNavigator();
+
+
+//for remove toekn.
+// const removeItemValue = async(key) => {
+//   try {
+//     await AsyncStorage.removeItem(key);
+//     return true;
+//   }
+//   catch (exception) {
+//     return false;
+//   }
+// }
+// removeItemValue('token')
+
 
 const ViewStack = () => {
   return (
@@ -41,29 +55,49 @@ const EmailStack = () => {
 };
 
 function App() {
-  return (
-    // <NavigationContainer style={styles.container}>
-    //   <Stack.Navigator screenOptions={{ headerShown: false }}>
-    //     {/* <Stack.Screen name="EmailRegistered" component={EmailStack} /> */}
-    //     <Stack.Screen name="ViewCart" component={ViewStack} />
-    //   </Stack.Navigator>
-    //   <StatusBar style="auto" />
-    // </NavigationContainer>
-    <View style={styles.container}>
+  const [isloggedin,setLogged] = useState(null)
 
-       {/* <Login /> */}
-      {/* <Register/> */}
-      {/* <Navbar /> */}
-      {/* <Category/> */}
-      <Grocery/>      
-      {/* <Welcome /> */}
-      {/* <EmailRegistered /> */}
-      {/* <Otp /> */}
-      {/* <PasswordVerify /> */}
-      {/* <ProductList/> */}
-      <StatusBar style="auto" />
-      {/* <ProductList/> */}
-    </View>
+  useEffect(async()=>{
+    const token = await AsyncStorage.getItem('token')
+    if(token)
+    {
+      setLogged(true)
+    }
+    else
+    {
+      setLogged(false)
+    }
+  },[])
+
+  return (
+    <NavigationContainer style={styles.container}>
+      <Stack.Navigator headerMode="none">
+      {
+        isloggedin==null?
+        (
+          <Stack.Screen name="Welcome" component={Welcome} />
+        )
+        : isloggedin==true?
+        (
+              <>
+              <Stack.Screen name="otp" component={Otp} />
+              <Stack.Screen name="Home" component={ViewCartHeader} />  
+              </>
+        )
+        :
+        (
+          <>
+          <Stack.Screen name="signup" component={Register} />
+          <Stack.Screen name="signin" component={Login} />
+          </>
+        )
+      }
+        {/* <Stack.Screen name="Welcome" component={Welcome} />
+        <Stack.Screen name="Home" component={ViewCartHeader} />  
+        <Stack.Screen name="signup" component={Register} />
+        <Stack.Screen name="signin" component={Login} /> */}
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 

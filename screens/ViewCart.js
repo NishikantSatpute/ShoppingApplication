@@ -4,7 +4,7 @@ import { AntDesign } from "@expo/vector-icons";
 import Constant from "expo-constants";
 import ViewCartDetail from "./ViewCartDetail";
 
-export const HomeScreen = ({ navigation }) => {
+export const HomeScreen = (props) => {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>Home Screen</Text>
@@ -16,7 +16,7 @@ export const HomeScreen = ({ navigation }) => {
   );
 };
 
-export const ViewCartHeader = ({ navigation }) => {
+export const ViewCartHeader = (props) => {
   return (
     <View>
       <View

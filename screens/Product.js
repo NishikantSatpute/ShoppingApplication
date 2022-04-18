@@ -6,7 +6,6 @@ import Navbar from "./Navbar";
 import Banner from "./Banner";
 import { LinearGradient } from 'expo-linear-gradient';
 import { TextInput, Avatar } from "react-native-paper";
-import { ScrollView } from "react-native-web";
 
 // import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 // import { faFacebook } from "@fortawesome/free-solid-svg-icons";
