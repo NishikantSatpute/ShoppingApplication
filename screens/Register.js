@@ -6,12 +6,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { TextInput, Avatar } from "react-native-paper";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Restart } from 'fiction-expo-restart';
-// import CodePush from 'react-native-code-push';
-// import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-// import { faFacebook } from "@fortawesome/free-solid-svg-icons";
-// or any pure javascript modules available in npm
-// import { Card } from 'react-native-paper';
-// import {Navigation} from 'react-navigation';
+
 
 const Register = (props) => {
   const [email,setEmail]=useState('');
@@ -47,25 +42,36 @@ const Register = (props) => {
             headers: headersList
           })
           const data = await response.json();
-          const token = data.token;
-          console.log(token)
+          const token1 = data.token;
+          //console.log(data)
+          
+          //if already register
+          if (data.code == 11000 && data.keyValue.email==email)
+          {
+            ToastAndroid.showWithGravity(
+              "Email Already register.",
+              ToastAndroid.SHORT,
+              ToastAndroid.BOTTOM
+            );
+          }
 
-          const storeData = async (token) => {
+          const storeData = async (token1) => {
                 try {
                   //console.log(data.token);
-                  await AsyncStorage.setItem('token', token).then(() => {
+                  await AsyncStorage.setItem('email', email);
+                  await AsyncStorage.setItem('tokenf', token1).then(() => {
                     ToastAndroid.showWithGravity(
                       "Register Successfully!",
                       ToastAndroid.SHORT,
                       ToastAndroid.BOTTOM
                     );
-                  }).then(() => { Restart() })
+                  }).then(() => { props.navigation.navigate("otp") })
                 } catch (e) {
                   console.log("Error:",e)
                 }
               }
               
-          storeData(token)
+          storeData(token1)
 
           // const getData = async () => {
           //   try {
@@ -85,41 +91,6 @@ const Register = (props) => {
         }
       }
       
-
-  // sendData=async()=>
-  //   fetch("http://127.0.0.1:3000/signup",{
-  //     method:"POST",
-  //     headers:{
-  //       "Accept": "*/*",
-  //       'Content-Type':'application/json'
-  //     },
-  //     body:JSON.stringify({
-  //       "email":email,
-  //       "password":password,
-  //       "firstName":firstname,
-  //       "lastName":lastname,
-  //       "otp":otp
-  //     })
-  //   })
-  //     .then(function (response) {
-  //       return response.text();
-  //     }).then(function (data) {
-  //       console.log(data);
-  //     })
-    // .then(async(data)=>{
-    //   const storeData = async (value) => {
-    //     try {
-    //       console.log(data.token);
-    //       //await AsyncStorage.setItem('token',data.token)
-    //     } catch (e) {
-    //       console.log("Error:",e)
-    //     }
-    //   }
-    // })
-    // .then(err=>{
-    //   console.log(err);
-    //   //ToastAndroid.show("Already exist!", ToastAndroid.SHORT);
-    // })
 
   return (
     <View style={{ margin: 0, backgroundColor: "#e4f2ea", height: "100%", width: "100%" }}>

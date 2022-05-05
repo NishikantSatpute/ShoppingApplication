@@ -14,10 +14,11 @@ import Banner from "./screens/Banner";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { AntDesign } from "@expo/vector-icons";
-import {ViewCartHeader} from "./screens/ViewCart";
+import { ViewCartHeader } from "./screens/ViewCart";
 import { HomeScreen } from "./screens/ViewCart";
 import  Category  from "./screens/Category";
 import { EmailRegistered } from "./screens/EmailRegistered";
+import  QRScan from "./screens/QRScan";
 import  Grocery  from "./screens/Grocery";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -25,16 +26,16 @@ const Stack = createNativeStackNavigator();
 
 
 //for remove toekn.
-// const removeItemValue = async(key) => {
-//   try {
-//     await AsyncStorage.removeItem(key);
-//     return true;
-//   }
-//   catch (exception) {
-//     return false;
-//   }
-// }
-// removeItemValue('token')
+const removeItemValue = async(key) => {
+  try {
+    await AsyncStorage.removeItem(key);
+    return true;
+  }
+  catch (exception) {
+    return false;
+  }
+}
+removeItemValue('token')
 
 
 const ViewStack = () => {
@@ -59,6 +60,10 @@ function App() {
 
   useEffect(async()=>{
     const token = await AsyncStorage.getItem('token')
+    const verify = await AsyncStorage.getItem('verify')
+    //await AsyncStorage.setItem('email', "pravinvkale889@gmail.com");
+    const email = await AsyncStorage.getItem('email')
+    console.log(email);
     if(token)
     {
       setLogged(true)
@@ -71,24 +76,34 @@ function App() {
 
   return (
     <NavigationContainer style={styles.container}>
-      <Stack.Navigator headerMode="none">
+      <Stack.Navigator screenOptions={{
+        headerShown: false
+      }}>
       {
         isloggedin==null?
         (
+          <>
+          {/* <Stack.Screen name="Productlist" component={ProductList} /> */}
+          <Stack.Screen name="QRScan" component={QRScan} />
           <Stack.Screen name="Welcome" component={Welcome} />
+          </>
         )
         : isloggedin==true?
         (
               <>
-              <Stack.Screen name="otp" component={Otp} />
-              <Stack.Screen name="Home" component={ViewCartHeader} />  
+                  <Stack.Screen name="Home" component={ViewCartHeader} />  
               </>
         )
         :
         (
           <>
+           {/* <Stack.Screen name="Productlist" component={ProductList} /> */}
+          <Stack.Screen name="Home" component={ViewCartHeader} />
+          <Stack.Screen name="QRScan" component={QRScan} />
+          <Stack.Screen name="Welcome" component={Welcome} />
           <Stack.Screen name="signup" component={Register} />
           <Stack.Screen name="signin" component={Login} />
+          <Stack.Screen name="otp" component={Otp} />
           </>
         )
       }

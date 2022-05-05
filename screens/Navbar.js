@@ -4,20 +4,21 @@ import Constants from "expo-constants";
 import { Entypo, AntDesign, FontAwesome, Feather} from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { TextInput, Avatar } from "react-native-paper";
+
 // import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 // import { faFacebook } from "@fortawesome/free-solid-svg-icons";
 // or any pure javascript modules available in npm
 // import { Card } from 'react-native-paper';
 // import {Navigation} from 'react-navigation';
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <View style={{ margin: 0, backgroundColor: "#fff", width: "100%" }}>
       <View style={styles.navbar}>
         <AntDesign name="arrowleft" size={24} color="black" style={{padding: 10,}} />
         <View style={styles.right_side}>
             <FontAwesome name="search" size={24} color="black" style={{padding: 10, fontSize: 20, color:"#6164e9"}}/> 
-            <Feather name="shopping-cart" size={24} color="black" style={{padding: 10, fontSize: 20, color:"#6164e9"}}/>  
+          <TouchableOpacity><Feather name="shopping-cart" size={24} color="black" style={{ padding: 10, fontSize: 20, color: "#6164e9" }} /></TouchableOpacity>  
             <FontAwesome name="user-circle-o" size={24} color="black" style={{padding: 10, fontSize: 20, color:"#6164e9"}} />
         </View>
       </View>      

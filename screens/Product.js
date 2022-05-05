@@ -24,7 +24,6 @@ const Product = () => {
           {/* <Ionicons style={{ padding: 10 }} name="fast-food" size={24} color="green" /> */}
           <Image source={require('../images/veglogo.png')} style={{ width: 200, height: 200 }}/>
         </View>
-        <Banner />
         <View style={{flexDirection: "row", justifyContent:"space-between"}}>
           <Text style={{ color: "orange", fontSize: 20, fontWeight: "bold", padding: 10}}> 14.00 OFF</Text>
           <View style={{padding: 10}}>
