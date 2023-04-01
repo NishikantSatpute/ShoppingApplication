@@ -28,7 +28,7 @@ const Login = (props) => {
         "Content-Type": "application/json"
       }
 
-      const response = await fetch("http://10.0.2.2:3000/signin", {
+      const response = await fetch("https://lovely-candles-fold-106-210-192-174.loca.lt/signin", {
         method: "POST",
         body: JSON.stringify({ "email": email, "password": password }),
         headers: headersList

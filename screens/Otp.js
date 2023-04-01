@@ -27,7 +27,7 @@ const Otp = (props) => {
         "Content-Type": "application/json"
       }
       const email = await AsyncStorage.getItem('email')
-      const response = await fetch("http://10.0.2.2:3000/otp", {
+      const response = await fetch("https://five-dryers-push-106-210-192-174.loca.lt/otp", {
         method: "POST",
         body: JSON.stringify({ "email": email, "otp": otp }),
         headers: headersList

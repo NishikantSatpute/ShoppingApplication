@@ -74,7 +74,7 @@ const QRScan = (props) => {
             "Content-Type": "application/json"
         }
 
-            const response = await fetch("https://ten-camels-argue-103-51-24-90.loca.lt/addbill", {
+            const response = await fetch("https://tender-geckos-sort-103-51-24-90.loca.lt/addbill", {
             method: "POST",
             body: JSON.stringify({"productcode": qrcode,"email": email,"productname": productname,"productprice": price,"productweight": weight }),
             headers: headersList
@@ -110,7 +110,7 @@ const QRScan = (props) => {
                 "Content-Type": "application/json"
             }
 
-            const response = await fetch("https://ten-camels-argue-103-51-24-90.loca.lt/findproducts", {
+            const response = await fetch("https://tender-geckos-sort-103-51-24-90.loca.lt/findproducts", {
                 method: "POST",
                 body: JSON.stringify({ "productcode": code1 }),
                 headers: headersList

@@ -26,16 +26,16 @@ const Stack = createNativeStackNavigator();
 
 
 //for remove toekn.
-const removeItemValue = async(key) => {
-  try {
-    await AsyncStorage.removeItem(key);
-    return true;
-  }
-  catch (exception) {
-    return false;
-  }
-}
-removeItemValue('token')
+// const removeItemValue = async(key) => {
+//   try {
+//     await AsyncStorage.removeItem(key);
+//     return true;
+//   }
+//   catch (exception) {
+//     return false;
+//   }
+// }
+// removeItemValue('token')
 
 
 const ViewStack = () => {
@@ -84,22 +84,19 @@ function App() {
         (
           <>
           {/* <Stack.Screen name="Productlist" component={ProductList} /> */}
-          <Stack.Screen name="QRScan" component={QRScan} />
           <Stack.Screen name="Welcome" component={Welcome} />
           </>
         )
         : isloggedin==true?
         (
               <>
-                  <Stack.Screen name="Home" component={ViewCartHeader} />  
+                  <Stack.Screen name="Home" component={ViewCartHeader} />
+                  <Stack.Screen name="QRScan" component={QRScan} />  
               </>
         )
         :
         (
           <>
-           {/* <Stack.Screen name="Productlist" component={ProductList} /> */}
-          <Stack.Screen name="Home" component={ViewCartHeader} />
-          <Stack.Screen name="QRScan" component={QRScan} />
           <Stack.Screen name="Welcome" component={Welcome} />
           <Stack.Screen name="signup" component={Register} />
           <Stack.Screen name="signin" component={Login} />

@@ -45,7 +45,7 @@ export const ViewCartHeader = (props) => {
             "Content-Type": "application/json"
           }
           
-          const response = await fetch("https://silly-eyes-run-103-51-24-90.loca.lt/finddata", {
+          const response = await fetch("https://five-dryers-push-106-210-192-174.loca.lt/finddata", {
             method: "POST",
             body: JSON.stringify({ "email": email}),
             headers: headersList
@@ -79,7 +79,7 @@ export const ViewCartHeader = (props) => {
             "Content-Type": "application/json"
           }
 
-            const response = await fetch("https://silly-eyes-run-103-51-24-90.loca.lt/sendbill", {
+            const response = await fetch("https://five-dryers-push-106-210-192-174.loca.lt/sendbill", {
             method: "POST",
             body: JSON.stringify({ "email": email }),
             headers: headersList

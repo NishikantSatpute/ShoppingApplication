@@ -36,7 +36,7 @@ const Register = (props) => {
             "Content-Type": "application/json"
           }
 
-          const response = await fetch("http://10.0.2.2:3000/signup", {
+          const response = await fetch("https://five-dryers-push-106-210-192-174.loca.lt/signup", {
             method: "POST",
             body: JSON.stringify({ "email": email,"password":password,"firstName":firstname,"lastName":lastname,"otp":otp}),
             headers: headersList
